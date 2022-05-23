@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour{
     public GameObject PanelLobby;
     public GameObject PanelRoom;
     public GameObject PanelMatchOptions;
+    [SerializeField] MeshRenderer tank_UI;
 
 
 
@@ -62,6 +63,16 @@ public class UIManager : MonoBehaviour{
     public void HideMatchOptions()
     {
         PanelMatchOptions.SetActive(false);
+    }
+    public void ChangeColorTank(int index)
+    {
+        string color;
+        ColorCodes color_c = (ColorCodes)index;
+        color = color_c.ToString();
+        Debug.Log("color: " + color);
+        if (color == "Red") tank_UI.material.color = Color.red;
+        else if (color == "Blue") tank_UI.material.color = Color.blue;
+        else tank_UI.material.color = Color.green;
     }
 
 }
