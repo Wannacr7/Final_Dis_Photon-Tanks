@@ -87,6 +87,7 @@ namespace Complete
 
             // Turn the tank off.
             gameObject.SetActive(false);
+            
         }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
